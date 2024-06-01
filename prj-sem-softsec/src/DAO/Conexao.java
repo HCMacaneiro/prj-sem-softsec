@@ -2,36 +2,43 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Conexao {
-
-    private static Conexao conex;
-    private final String con_banco;
-    private final String usuario_mysql;
-    private final String senha_mysql;
+    private String host;
+    private String usuario;
+    private String senha;
     private Connection conn;
+    private static Conexao conex;
 
-    public Conexao(){
-        conex = null;
-        usuario_mysql = "root";
-        senha_mysql = "kali";
-        con_banco = "jdbc:mysql//127.0.0.1:3306/bdseg?useSSL=false";
-        try{
+    private Conexao(){
+        this.host = "jdbc:mysql://127.0.0.1:3306/mail_sender_prj?useSSL=false";
+        this.usuario = "root";
+        this.senha = "kali";
+
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = (Connection) DriverManager.getConnection(con_banco, usuario_mysql, senha_mysql);
-        } catch (Exception e){
-            e.printStackTrace();
+            this.conn = DriverManager.getConnection(host, usuario, senha);
+        }
+        catch (ClassNotFoundException ex){
+            ex.printStackTrace();
+        }
+        catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 
-    public static Conexao getInstance(){
+    public static Conexao getInstancia(){
         if (conex == null){
             conex = new Conexao();
         }
         return conex;
     }
 
-    public Connection getConexao(){
+    public Connection getConn(){
         return this.conn;
     }
 
