@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d1e8ca-5645-4811-bc3a-f92382751047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/EnviarEmailDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/SignUpDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysqlScript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mysqlScript.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/SignUpDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/SignUpDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "diego",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Diego Lautenschlager/Documents/Software_Seguro/prj-sem-softsec"
+    "last_opened_file_path": "C:/Users/Diego Lautenschlager/Downloads/mysql-connector-java-8.0.25.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
