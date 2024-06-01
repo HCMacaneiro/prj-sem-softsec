@@ -17,7 +17,7 @@ public class SignUpView {
     }
 
     public void displayPasswordPrompt() {
-        System.out.print("Insira o seu e-mail: ");
+        System.out.print("Insira a sua senha: ");
     }
 
     public String getPassword() {
