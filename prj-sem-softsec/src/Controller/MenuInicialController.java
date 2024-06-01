@@ -7,7 +7,7 @@ public class MenuInicialController {
     private MenuInicialView view;
 
     public MenuInicialController() {
-        this.view = view;
+        this.view = new MenuInicialView();
     }
 
     public void handleMenu() {
