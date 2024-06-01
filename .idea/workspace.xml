@@ -20,26 +20,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-<<<<<<< Updated upstream
-=======
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
->>>>>>> Stashed changes
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "diego",
     "kotlin-language-version-configured": "true",
-<<<<<<< Updated upstream
     "last_opened_file_path": "C:/Users/Diego Lautenschlager/Documents/Software_Seguro/prj-sem-softsec"
-=======
-    "last_opened_file_path": "C:/Users/Diego Lautenschlager/Documents/GitHub/prj-sem-softsec",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
->>>>>>> Stashed changes
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
