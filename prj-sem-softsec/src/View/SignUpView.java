@@ -17,7 +17,10 @@ public class SignUpView {
     }
 
     public void displayPasswordPrompt() {
-        System.out.print("Insira a sua senha: ");
+        System.out.print("Insira a sua senha (pelo menos 8 caracteres, pelo menos 1 número, " +
+                "pelo menos 1 caracter especial, " +
+                "pelo menos 1 letra maiúscula " +
+                "e pelo menos 1 letra minúscula): ");
     }
 
     public String getPassword() {
