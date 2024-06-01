@@ -19,8 +19,12 @@ public class SignUpController {
         String password = view.getPassword();
         this.signUp = new SignUp(email, password);
         boolean success = signUp.signUp();
-
-        view.displaySignUpResult(success);
+        if (success) {
+            view.displaySignUpResult(true);
+            new MenuInicialController().handleMenu();
+        } else {
+            view.displaySignUpResult(false);
+        }
     }
 }
 
