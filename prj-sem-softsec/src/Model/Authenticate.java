@@ -1,3 +1,5 @@
+package Model;
+
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClientBuilder;
@@ -12,7 +14,8 @@ import java.util.Map;
 public class Authenticate {
     private static String USER_POOL_ID = "us-east-2_vSmEHFF6q";
     private static String CLIENT_ID = "7c7lbnjf8htdiasj52p2uh6q6a";
-
+    private InitiateAuthResult authResponse;
+    private AuthenticationResultType authResult;
     public Authenticate(String email, String senha) {
         AWSCognitoIdentityProvider awsc = AWSCognitoIdentityProviderClientBuilder.standard()
                 .withRegion(Regions.US_EAST_2)
@@ -27,12 +30,12 @@ public class Authenticate {
                 .withAuthParameters(authParams)
                 .withClientId(CLIENT_ID);
 
-        InitiateAuthResult authResponse = awsc.initiateAuth(authRequest);
-        AuthenticationResultType authResult = authResponse.getAuthenticationResult();
-        if (authResult != null) {
-            System.out.println("Authentication successful");
-        } else {
-            System.out.println("Authentication failed or further challenge required");
-        }
+        authResponse = awsc.initiateAuth(authRequest);
+        authResult = authResponse.getAuthenticationResult();
     }
+    public boolean authenticate() {
+        return (authResult != null);
+    }
+
+
 }
