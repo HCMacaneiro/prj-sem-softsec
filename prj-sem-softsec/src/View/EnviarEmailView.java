@@ -23,6 +23,8 @@ public class EnviarEmailView {
     }
 
     public void displayEmailBody() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
@@ -34,6 +36,8 @@ public class EnviarEmailView {
     }
 
     public void displayEmailRecipient(ArrayList<Integer> id_array, ArrayList<String> email_array) {
+        System.out.println("");
+        System.out.println("");
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
@@ -49,7 +53,21 @@ public class EnviarEmailView {
     }
 
     public int getRecipient() {
-        return scanner.nextInt();
+        int recipient_id = scanner.nextInt();
+        scanner.nextLine();
+        return recipient_id;
+    }
+
+    public void displayEmailEnviado(){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("=====================");
+        System.out.println("Email Enviado! Retornando ao menu...");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

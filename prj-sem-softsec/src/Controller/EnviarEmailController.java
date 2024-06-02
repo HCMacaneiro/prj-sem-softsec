@@ -13,12 +13,13 @@ public class EnviarEmailController {
     private CapturaRecipients capturaRecipients = new CapturaRecipients();
     private Message message;
     private EnviarEmailDAO enviarEmailDAO = new EnviarEmailDAO();
+    private MenuEmailController menuEmailController = new MenuEmailController();
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
     }
 
-    public void handleMenu(int email_id){
+    public void handleMenu(String email, int email_id){
         ArrayList<Integer> id_array = capturaRecipients.getId();
         ArrayList<String> email_array = capturaRecipients.getEmail();
 
@@ -34,5 +35,9 @@ public class EnviarEmailController {
         message = new Message(email_id, recipient, subject, body);
 
         enviarEmailDAO.inserir(message);
+
+        view.displayEmailEnviado();
+
+        menuEmailController.handleMenu(email, email_id);
     }
 }

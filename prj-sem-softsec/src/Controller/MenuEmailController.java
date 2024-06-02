@@ -19,7 +19,7 @@ public class MenuEmailController {
         switch (choice) {
             case 1:
                 EnviarEmailController enviarEmailController = new EnviarEmailController();
-                enviarEmailController.handleMenu(email_id);
+                enviarEmailController.handleMenu(email, email_id);
             case 2:
                 lerCaixaController.handleMenu(email_id);
             case 3:
