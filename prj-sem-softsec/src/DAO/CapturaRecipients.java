@@ -18,8 +18,8 @@ public class CapturaRecipients {
         this.conexao = Conexao.getInstancia();
     }
 
-    public ArrayList<Integer> getId(String email){
-        ArrayList<Integer> id_array = new ArrayList<Integer>();
+    public ArrayList<Integer> getId(){
+        ArrayList<Integer> id_array = new ArrayList<>();
 
         try{
 
@@ -30,6 +30,7 @@ public class CapturaRecipients {
             while (rs.next()) {
                 id_array.add(Integer.parseInt(rs.getString("user_id")));
             }
+            System.out.printf(String.valueOf(id_array));
 
             rs.close();
             this.ps.close();
@@ -45,11 +46,11 @@ public class CapturaRecipients {
         return id_array;
     }
 
-    public ArrayList<String> getEmail(String email){
+    public ArrayList<String> getEmail(){
         ArrayList<String> email_array = new ArrayList<String>();
 
         try{
-            this.query = "SELECT user_id FROM USERS";
+            this.query = "SELECT email FROM USERS";
             this.ps = this.conexao.getConn().prepareStatement(this.query);
             rs = this.ps.executeQuery();
 
