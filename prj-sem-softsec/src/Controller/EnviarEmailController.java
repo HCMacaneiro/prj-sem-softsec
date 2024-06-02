@@ -1,6 +1,7 @@
 package Controller;
 
 import DAO.CapturaRecipients;
+import DAO.EnviarEmailDAO;
 import Model.Message;
 import View.EnviarEmailView;
 
@@ -11,6 +12,7 @@ public class EnviarEmailController {
     private EnviarEmailView view;
     private CapturaRecipients capturaRecipients = new CapturaRecipients();
     private Message message;
+    private EnviarEmailDAO enviarEmailDAO = new EnviarEmailDAO();
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
@@ -30,5 +32,7 @@ public class EnviarEmailController {
         String body = view.getBody();
 
         message = new Message(email_id, recipient, subject, body);
+
+        enviarEmailDAO.inserir(message);
     }
 }

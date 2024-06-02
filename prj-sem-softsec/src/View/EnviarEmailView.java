@@ -15,7 +15,7 @@ public class EnviarEmailView {
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
-        System.out.print("Insira o assunto: ");
+        System.out.println("Insira o assunto: ");
     }
 
     public String getSubject() {
@@ -26,7 +26,7 @@ public class EnviarEmailView {
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
-        System.out.print("Insira o corpo do email: ");
+        System.out.println("Insira o corpo do email: ");
     }
 
     public String getBody() {
@@ -45,7 +45,7 @@ public class EnviarEmailView {
         }
 
         System.out.println("=====================");
-        System.out.print("Insira o destinatário: ");
+        System.out.println("Insira o destinatário: ");
     }
 
     public int getRecipient() {

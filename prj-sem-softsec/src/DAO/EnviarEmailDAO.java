@@ -19,12 +19,12 @@ public class EnviarEmailDAO {
     public void inserir(Message message){
 
         try{
-            this.query = "INSERT INTO message(sender_id, recipient_id, subject, body) VALUES (?, ?, '?', '?')";
+            this.query = "INSERT INTO messages(sender_id, recipient_id, subject, body) VALUES (?, ?, ?, ?)";
             this.ps = this.conexao.getConn().prepareStatement(this.query);
             this.ps.setString(1, String.valueOf(message.getSender_id()));
-            this.ps.setString(1, String.valueOf(message.getRecipient_id()));
-            this.ps.setString(1, String.valueOf(message.getSubject()));
-            this.ps.setString(1, String.valueOf(message.getBody()));
+            this.ps.setString(2, String.valueOf(message.getRecipient_id()));
+            this.ps.setString(3, String.valueOf(message.getSubject()));
+            this.ps.setString(4, String.valueOf(message.getBody()));
             this.ps.executeUpdate();
             this.ps.close();
         }
