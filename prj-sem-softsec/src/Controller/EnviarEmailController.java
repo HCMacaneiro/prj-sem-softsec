@@ -1,6 +1,7 @@
 package Controller;
 
 import DAO.CapturaRecipients;
+import Model.Message;
 import View.EnviarEmailView;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class EnviarEmailController {
 
     private EnviarEmailView view;
     private CapturaRecipients capturaRecipients = new CapturaRecipients();
+    private Message message;
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
@@ -26,5 +28,7 @@ public class EnviarEmailController {
 
         view.displayEmailBody();
         String body = view.getBody();
+
+        message = new Message(email_id, recipient, subject, body);
     }
 }

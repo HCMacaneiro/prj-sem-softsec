@@ -5,12 +5,10 @@ import View.MenuEmailView;
 public class MenuEmailController {
 
     private final MenuEmailView view;
-    private final EnviarEmailController enviarEmailController;
     private final LerCaixaController lerCaixaController;
 
     public MenuEmailController(){
         this.view = new MenuEmailView();
-        this.enviarEmailController =  new EnviarEmailController();
         this.lerCaixaController = new LerCaixaController();
     }
 
@@ -20,6 +18,7 @@ public class MenuEmailController {
 
         switch (choice) {
             case 1:
+                EnviarEmailController enviarEmailController = new EnviarEmailController();
                 enviarEmailController.handleMenu(email_id);
             case 2:
                 lerCaixaController.handleMenu(email_id);
