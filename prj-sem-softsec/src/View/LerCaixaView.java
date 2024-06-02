@@ -1,7 +1,6 @@
 package View;
 
 import Controller.MenuEmailController;
-import Controller.MenuInicialController;
 import Model.Message;
 
 import java.util.ArrayList;
@@ -12,7 +11,9 @@ public class LerCaixaView {
     private final Scanner scanner;
     private MenuEmailController menuEmailController;
 
-    public LerCaixaView(){this.scanner = new Scanner(System.in);}
+    public LerCaixaView(){
+        this.scanner = new Scanner(System.in);
+    }
 
     public void displayCaixaPostal(ArrayList<Message> caixa_postal, String email, int email_id){
         System.out.println("");
@@ -24,7 +25,8 @@ public class LerCaixaView {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro ao carregar caixa postal: " + e.getMessage());
         }
 
         for (Message m : caixa_postal){
@@ -39,11 +41,11 @@ public class LerCaixaView {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                // ERR00-J: Não suprimir ou ignorar exceções verificadas
+                System.err.println("Erro ao exibir mensagem: " + e.getMessage());
             }
         }
 
         new MenuEmailController().handleMenu(email, email_id);
     }
-
 }

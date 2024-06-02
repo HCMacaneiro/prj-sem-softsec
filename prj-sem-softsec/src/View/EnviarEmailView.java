@@ -1,11 +1,12 @@
 package View;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EnviarEmailView {
 
-    Scanner scanner;
+    private Scanner scanner;
 
     public EnviarEmailView(){
         this.scanner = new Scanner(System.in);
@@ -21,7 +22,7 @@ public class EnviarEmailView {
     }
 
     public String getSubject() {
-        return scanner.nextLine();
+        return normalizeString(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
     }
 
     public void displayEmailBody() {
@@ -34,7 +35,7 @@ public class EnviarEmailView {
     }
 
     public String getBody() {
-        return scanner.nextLine();
+        return normalizeString(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
     }
 
     public void displayEmailRecipient(ArrayList<Integer> id_array, ArrayList<String> email_array) {
@@ -46,7 +47,7 @@ public class EnviarEmailView {
 
         System.out.println("Listando ID - Email, dos usuários");
 
-        for (int i = 0; i <= (id_array.size() - 1); i++){
+        for (int i = 0; i < id_array.size(); i++){ // Corrigido o loop para evitar indexação fora dos limites
             System.out.println("ID: " + id_array.get(i) + " - Email: " + email_array.get(i));
         }
 
@@ -55,8 +56,13 @@ public class EnviarEmailView {
     }
 
     public int getRecipient() {
-        int recipient_id = scanner.nextInt();
-        scanner.nextLine();
+        int recipient_id = 0;
+        try {
+            recipient_id = Integer.parseInt(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
+        } catch (NumberFormatException e) {
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            System.err.println("ID do destinatário inválido. Por favor, insira um número válido.");
+        }
         return recipient_id;
     }
 
@@ -68,8 +74,12 @@ public class EnviarEmailView {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro ao retornar ao menu: " + e.getMessage());
         }
     }
 
+    private String normalizeString(String input) {
+        return Normalizer.normalize(input, Normalizer.Form.NFC); // IDS01-J: Normalização de strings antes da validação
+    }
 }

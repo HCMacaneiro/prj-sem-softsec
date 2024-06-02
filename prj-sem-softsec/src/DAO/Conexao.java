@@ -5,41 +5,45 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private String host;
-    private String usuario;
-    private String senha;
+
+    private static Conexao instancia;
     private Connection conn;
-    private static Conexao conex;
 
-    private Conexao(){
-        this.host = "jdbc:mysql://127.0.0.1:3306/mail_sender_prj?useSSL=false";
-        this.usuario = "root";
-        this.senha = "kali";
-
+    private Conexao() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.conn = DriverManager.getConnection(host, usuario, senha);
-        }
-        catch (ClassNotFoundException ex){
-            ex.printStackTrace();
-        }
-        catch (SQLException ex){
-            ex.printStackTrace();
-        }
-        catch (Exception ex){
-            ex.printStackTrace();
+            String url = "jdbc:mysql://127.0.0.1:3306/mail_sender_prj?useSSL=false";
+            String user = "root";
+            String password = "kali";
+            this.conn = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e) {
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            throw new RuntimeException("Erro ao conectar ao banco de dados, usuário ou senha incorretos...", e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public static Conexao getInstancia(){
-        if (conex == null){
-            conex = new Conexao();
+    public static synchronized Conexao getInstancia() {
+        if (instancia == null) {
+            instancia = new Conexao();
         }
-        return conex;
+        return instancia;
     }
 
-    public Connection getConn(){
-        return this.conn;
+    public Connection getConn() {
+        try {
+            if (conn == null || conn.isClosed()) {
+                // Reconectar se a conexão estiver fechada
+                String url = "jdbc:mysql://127.0.0.1:3306/mail_sender_prj?useSSL=false";
+                String user = "root";
+                String password = "kali";
+                this.conn = DriverManager.getConnection(url, user, password);
+            }
+        } catch (SQLException e) {
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            throw new RuntimeException("Erro ao reconectar ao banco de dados", e);
+        }
+        return conn;
     }
-
 }
