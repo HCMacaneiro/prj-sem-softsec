@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d1e8ca-5645-4811-bc3a-f92382751047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/CapturaID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/AuthenticateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/AuthenticateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/AuthenticateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/AuthenticateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/EnviarEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/EnviarEmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="semi-main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -35,18 +40,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "diego",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Diego Lautenschlager/Downloads/mysql-connector-java-8.0.25.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;diego&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Diego Lautenschlager/Downloads/mysql-connector-java-8.0.25.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -10,7 +10,7 @@ public class LerCaixaController {
         this.view = new LerCaixaView();
     }
 
-    public void handleMenu(){
+    public void handleMenu(int email_id){
 
     }
 

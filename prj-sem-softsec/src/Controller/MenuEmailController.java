@@ -20,9 +20,9 @@ public class MenuEmailController {
 
         switch (choice) {
             case 1:
-                enviarEmailController.handleMenu();
+                enviarEmailController.handleMenu(email_id);
             case 2:
-                lerCaixaController.handleMenu();
+                lerCaixaController.handleMenu(email_id);
             case 3:
                 System.exit(0);
             default:
