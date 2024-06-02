@@ -1,5 +1,6 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EnviarEmailView {
@@ -25,18 +26,25 @@ public class EnviarEmailView {
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
-        System.out.print("Insira o assunto: ");
+        System.out.print("Insira o corpo do email: ");
     }
 
     public String getBody() {
         return scanner.nextLine();
     }
 
-    public void displayEmailRecipient() {
+    public void displayEmailRecipient(ArrayList<Integer> id_array, ArrayList<String> email_array) {
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
-        System.out.print("Insira o assunto: ");
+
+        System.out.println("Listando ID - Email, dos usuários");
+        for (int i = 0; i > (id_array.size() - 1); i++){
+            System.out.println("ID: " + id_array.get(i) + " - Email: " + email_array.get(i));
+        }
+
+        System.out.println("=====================");
+        System.out.print("Insira o destinatário: ");
     }
 
     public int getRecipient() {
