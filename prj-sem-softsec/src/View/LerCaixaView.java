@@ -6,7 +6,7 @@ import Model.Message;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class LerCaixaView {
+public class LerCaixaView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private final Scanner scanner;
     private MenuEmailController menuEmailController;

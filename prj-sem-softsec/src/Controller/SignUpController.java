@@ -5,7 +5,7 @@ import Model.SignUp;
 import Model.Usuario;
 import View.SignUpView;
 
-public class SignUpController {
+public class SignUpController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private SignUpView view;
     private SignUp signUp;

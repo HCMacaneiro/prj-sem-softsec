@@ -2,7 +2,7 @@ package Model;
 
 import DAO.Conexao;
 
-public class Usuario {
+public class Usuario { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private String email;
 

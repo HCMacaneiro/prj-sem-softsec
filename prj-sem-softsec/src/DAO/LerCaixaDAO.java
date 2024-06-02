@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class LerCaixaDAO {
+public class LerCaixaDAO { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private static LerCaixaDAO instance; // MSC07-J: Implementação do padrão Singleton
     private Conexao conexao;

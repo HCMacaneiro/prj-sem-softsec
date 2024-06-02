@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class EnviarEmailDAO {
+public class EnviarEmailDAO { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private Conexao conexao;
 

@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CapturaID {
+public class CapturaID { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private Conexao conexao;
     private String query;

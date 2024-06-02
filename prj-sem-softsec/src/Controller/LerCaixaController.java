@@ -7,7 +7,7 @@ import View.LerCaixaView;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class LerCaixaController {
+public class LerCaixaController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private LerCaixaView view;
     private LerCaixaDAO lerCaixaDAO = LerCaixaDAO.getInstance(); // MSC07-J: Implementação do padrão Singleton

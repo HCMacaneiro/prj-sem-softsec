@@ -8,7 +8,7 @@ import View.EnviarEmailView;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class EnviarEmailController {
+public class EnviarEmailController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private EnviarEmailView view;
     private CapturaRecipients capturaRecipients = new CapturaRecipients();

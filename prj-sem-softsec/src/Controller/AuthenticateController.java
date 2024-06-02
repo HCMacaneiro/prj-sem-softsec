@@ -5,7 +5,7 @@ import Model.Authenticate;
 import View.AuthenticateView;
 import Controller.MenuEmailController;
 
-public class AuthenticateController {
+public class AuthenticateController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private AuthenticateView view;
     private Authenticate authenticate;

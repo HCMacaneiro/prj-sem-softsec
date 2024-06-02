@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CapturaRecipients {
+public class CapturaRecipients { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private Conexao conexao;
 

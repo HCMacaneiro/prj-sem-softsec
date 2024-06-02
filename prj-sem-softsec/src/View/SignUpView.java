@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-public class SignUpView {
+public class SignUpView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     public void displaySignUp() {
         System.out.println("=====================");

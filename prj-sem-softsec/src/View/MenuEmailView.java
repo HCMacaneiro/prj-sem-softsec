@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-public class MenuEmailView {
+public class MenuEmailView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     public void displayMenu(String email) {
         System.out.println("");

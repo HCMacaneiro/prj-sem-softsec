@@ -4,7 +4,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EnviarEmailView {
+public class EnviarEmailView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private Scanner scanner;
 
@@ -47,7 +47,7 @@ public class EnviarEmailView {
 
         System.out.println("Listando ID - Email, dos usuários");
 
-        for (int i = 0; i < id_array.size(); i++){ // Corrigido o loop para evitar indexação fora dos limites
+        for (int i = 0; i < id_array.size(); i++){
             System.out.println("ID: " + id_array.get(i) + " - Email: " + email_array.get(i));
         }
 

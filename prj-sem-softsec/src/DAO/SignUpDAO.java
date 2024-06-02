@@ -8,7 +8,7 @@ import Model.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class SignUpDAO {
+public class SignUpDAO { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private Conexao conexao;
     private String query;

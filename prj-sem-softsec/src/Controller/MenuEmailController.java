@@ -2,7 +2,7 @@ package Controller;
 
 import View.MenuEmailView;
 
-public class MenuEmailController {
+public class MenuEmailController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private final MenuEmailView view;
     private final LerCaixaController lerCaixaController;

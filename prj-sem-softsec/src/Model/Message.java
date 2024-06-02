@@ -1,6 +1,6 @@
 package Model;
 
-public class Message {
+public class Message { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private int sender_id;
     private int recipient_id;

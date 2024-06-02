@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-public class MenuInicialView {
+public class MenuInicialView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     public void displayMenu() {
         System.out.println("=====================");

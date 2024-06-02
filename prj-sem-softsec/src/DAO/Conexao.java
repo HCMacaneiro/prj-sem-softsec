@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Conexao {
+public class Conexao { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private static Conexao instancia;
     private Connection conn;

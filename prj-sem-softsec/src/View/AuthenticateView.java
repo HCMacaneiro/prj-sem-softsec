@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-public class AuthenticateView {
+public class AuthenticateView { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     public void displayLoginCredentials() {
         System.out.println("=====================");

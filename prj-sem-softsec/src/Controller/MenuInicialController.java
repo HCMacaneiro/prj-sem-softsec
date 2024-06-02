@@ -2,7 +2,7 @@ package Controller;
 
 import View.MenuInicialView;
 
-public class MenuInicialController {
+public class MenuInicialController { // DCL01-J: Não reutilizar identificadores públicos da Java Standard Library
 
     private MenuInicialView view;
 

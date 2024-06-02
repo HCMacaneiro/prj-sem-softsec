@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74d1e8ca-5645-4811-bc3a-f92382751047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/DAO/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/DAO/Conexao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/EnviarEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/EnviarEmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/CapturaRecipients.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/CapturaRecipients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/EnviarEmailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/EnviarEmailDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/LerCaixaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/LerCaixaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/View/LerCaixaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/View/LerCaixaView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
