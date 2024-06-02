@@ -19,9 +19,9 @@ CREATE TABLE IF NOT EXISTS Messages (
 );
 
 -- inserts para teste
-insert into Users(password, email) VALUES("diego.lautenschlager@pucpr.edu.br");
-insert into Users(password, email) VALUES("liconl,felix@pucpr.edu.br");
-insert into Users(password, email) VALUES("henrique.macaneiro@pucpr.edu.br");
+insert into Users(email) VALUES("diego.lautenschlager@pucpr.edu.br");
+insert into Users(email) VALUES("liconl.felix@pucpr.edu.br");
+insert into Users(email) VALUES("henrique.macaneiro@pucpr.edu.br");
 
 insert into Messages(sender_id, recipient_id, subject, body) VALUES(1,2,"Mensagem de teste", "Isso é um teste");
 insert into Messages(sender_id, recipient_id, subject, body) VALUES(1,3,"Mensagem de teste", "Isso é um teste");

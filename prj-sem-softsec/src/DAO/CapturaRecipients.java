@@ -30,7 +30,6 @@ public class CapturaRecipients {
             while (rs.next()) {
                 id_array.add(Integer.parseInt(rs.getString("user_id")));
             }
-            System.out.printf(String.valueOf(id_array));
 
             rs.close();
             this.ps.close();

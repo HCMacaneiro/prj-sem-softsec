@@ -39,7 +39,8 @@ public class EnviarEmailView {
         System.out.println("=====================");
 
         System.out.println("Listando ID - Email, dos usuários");
-        for (int i = 0; i > (id_array.size() - 1); i++){
+
+        for (int i = 0; i <= (id_array.size() - 1); i++){
             System.out.println("ID: " + id_array.get(i) + " - Email: " + email_array.get(i));
         }
 
