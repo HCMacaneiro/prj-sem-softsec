@@ -13,5 +13,4 @@ public class Usuario {
     public String getEmail(){
         return this.email;
     }
-
 }

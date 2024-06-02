@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d1e8ca-5645-4811-bc3a-f92382751047" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/CapturaID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/SignUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/SignUpDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/DAO/SignUpDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/AuthenticateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prj-sem-softsec/Controller/AuthenticateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/AuthenticateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/AuthenticateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Model/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

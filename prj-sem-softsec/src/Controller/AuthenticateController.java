@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.CapturaID;
 import Model.Authenticate;
 import View.AuthenticateView;
 import Controller.MenuEmailController;
@@ -9,6 +10,7 @@ public class AuthenticateController {
     private AuthenticateView view;
     private Authenticate authenticate;
     private MenuEmailController menuEmailController;
+    private int email_id;
 
     public AuthenticateController() {
         this.view = new AuthenticateView();
@@ -26,8 +28,9 @@ public class AuthenticateController {
 
         // se o usuário for autenticado, entra-se no email
         if (success == true){
+            email_id = new CapturaID().inserir(email);
             menuEmailController = new MenuEmailController();
-            menuEmailController.handleMenu(email);
+            menuEmailController.handleMenu(email, email_id);
         }
     }
 }
