@@ -36,6 +36,4 @@ public class Authenticate {
     public boolean authenticate() {
         return (authResult != null);
     }
-
-
 }
