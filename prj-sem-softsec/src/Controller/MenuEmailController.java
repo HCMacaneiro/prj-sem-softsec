@@ -21,7 +21,7 @@ public class MenuEmailController {
                 EnviarEmailController enviarEmailController = new EnviarEmailController();
                 enviarEmailController.handleMenu(email, email_id);
             case 2:
-                lerCaixaController.handleMenu(email_id);
+                lerCaixaController.handleMenu(email, email_id);
             case 3:
                 System.exit(0);
             default:

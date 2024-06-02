@@ -12,6 +12,8 @@ public class EnviarEmailView {
     }
 
     public void displayEmailSubject() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("=====================");
         System.out.println("Enviar Email");
         System.out.println("=====================");
@@ -49,7 +51,7 @@ public class EnviarEmailView {
         }
 
         System.out.println("=====================");
-        System.out.println("Insira o destinatário: ");
+        System.out.println("Insira o ID do destinatário: ");
     }
 
     public int getRecipient() {
