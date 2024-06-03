@@ -3,6 +3,7 @@ package Model;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClientBuilder;
+import com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException;
 import com.amazonaws.services.cognitoidp.model.SignUpRequest;
 import com.amazonaws.services.cognitoidp.model.SignUpResult;
 
@@ -12,19 +13,31 @@ public class SignUp {
     private SignUpResult result;
 
     public SignUp(String email, String senha) {
-        AWSCognitoIdentityProvider awsc = AWSCognitoIdentityProviderClientBuilder.standard()
-                .withRegion(Regions.US_EAST_2)
-                .build();
+        AWSCognitoIdentityProvider awsc;
+        try {
+            awsc = AWSCognitoIdentityProviderClientBuilder.standard()
+                    .withRegion(Regions.US_EAST_2)
+                    .build();
+        } catch (Exception e) {
+            System.out.println("Error creating Cognito client: " + e.getMessage());
+            return;
+        }
 
         SignUpRequest sur = new SignUpRequest()
                 .withClientId(CLIENT_ID)
                 .withUsername(email)
                 .withPassword(senha);
 
-        result = awsc.signUp(sur);
+        try {
+            result = awsc.signUp(sur);
+        } catch (AWSCognitoIdentityProviderException e) {
+            System.out.println("Signup failed: " + e.getErrorCode() + " - " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error during signup: " + e.getMessage());
+        }
     }
 
     public boolean signUp() {
-        return (result != null);
+        return result != null;
     }
 }
