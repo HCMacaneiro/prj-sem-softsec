@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74d1e8ca-5645-4811-bc3a-f92382751047" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/LerCaixaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/Controller/MenuEmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/View/EnviarEmailView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prj-sem-softsec/src/View/LerCaixaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prj-sem-softsec/src/View/LerCaixaView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;diego&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;henrique&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Diego Lautenschlager/Downloads/mysql-connector-java-8.0.25.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -51,6 +47,19 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

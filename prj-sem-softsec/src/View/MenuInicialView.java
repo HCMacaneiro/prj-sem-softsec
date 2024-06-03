@@ -1,5 +1,6 @@
 package View;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuInicialView {
@@ -16,7 +17,12 @@ public class MenuInicialView {
     public int getUserInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite sua opção: ");
-        return scanner.nextInt();
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida. Digite um número inteiro.");
+            return getUserInput();
+        }
     }
 }
 
