@@ -14,7 +14,7 @@ public class Conexao {
     private Conexao(){
         this.host = "jdbc:mysql://127.0.0.1:3306/mail_sender_prj?useSSL=false";
         this.usuario = "root";
-        this.senha = "kali";
+        this.senha = "root";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
