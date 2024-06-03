@@ -16,9 +16,15 @@ public class Authenticate {
     public Authenticate(String email, String senha) {
         AWSCognitoIdentityProvider awsc;
         try {
+            if (!isValidEmail(email)) {
+                throw new IllegalArgumentException("Formato de e-mail inválido.");
+            }
             awsc = AWSCognitoIdentityProviderClientBuilder.standard()
                     .withRegion(Regions.US_EAST_2)
                     .build();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+            return;
         } catch (Exception e) {
             System.out.println("Erro com AWS Cognito: " + e.getMessage());
             return;
@@ -45,5 +51,10 @@ public class Authenticate {
 
     public boolean authenticate() {
         return authResult != null;
+    }
+
+    private static boolean isValidEmail(String email) {
+        String regex = "^[\\w!#$%&'*+/=?^`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?$";
+        return email.matches(regex);
     }
 }
