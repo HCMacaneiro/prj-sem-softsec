@@ -16,16 +16,16 @@ public class SignUp {
         AWSCognitoIdentityProvider awsc;
         try {
             if (!isValidEmail(email)) {
-                throw new IllegalArgumentException("Invalid email format");
+                throw new IllegalArgumentException("Formato de e-mail inválido.");
             }
             awsc = AWSCognitoIdentityProviderClientBuilder.standard()
                     .withRegion(Regions.US_EAST_2)
                     .build();
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
             return;
         } catch (Exception e) {
-            System.out.println("Error creating Cognito client: " + e.getMessage());
+            System.out.println("Erro com AWS Cognito: " + e.getMessage());
             return;
         }
 
@@ -37,9 +37,9 @@ public class SignUp {
         try {
             result = awsc.signUp(sur);
         } catch (AWSCognitoIdentityProviderException e) {
-            System.out.println("Signup failed: " + e.getErrorCode() + " - " + e.getMessage());
+            System.out.println("Cadastro falhou: " + e.getErrorCode() + " - " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error during signup: " + e.getMessage());
+            System.out.println("Erro durante cadastro: " + e.getMessage());
         }
     }
 

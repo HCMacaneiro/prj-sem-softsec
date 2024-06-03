@@ -23,7 +23,7 @@ public class Authenticate {
                     .withRegion(Regions.US_EAST_2)
                     .build();
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
             return;
         } catch (Exception e) {
             System.out.println("Erro com AWS Cognito: " + e.getMessage());
