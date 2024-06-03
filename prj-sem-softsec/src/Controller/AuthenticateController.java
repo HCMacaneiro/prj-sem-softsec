@@ -27,10 +27,14 @@ public class AuthenticateController {
         view.displayAuthenticationResult(success);
 
         // se o usuário for autenticado, entra-se no email
-        if (success == true){
-            email_id = new CapturaID().inserir(email);
-            menuEmailController = new MenuEmailController();
-            menuEmailController.handleMenu(email, email_id);
+        if (success == true) {
+            try {
+                email_id = new CapturaID().inserir(email);
+                menuEmailController = new MenuEmailController();
+                menuEmailController.handleMenu(email, email_id);
+            } catch (Exception e) {
+                System.out.println("Erro ao processar autenticação: " + e.getMessage());
+            }
         }
     }
 }
