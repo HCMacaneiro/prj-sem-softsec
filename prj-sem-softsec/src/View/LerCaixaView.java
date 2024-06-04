@@ -25,7 +25,7 @@ public class LerCaixaView {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            // ERR00-J: não suprimir ou ignorar exceções verificadas
             System.err.println("Erro ao carregar caixa postal: " + e.getMessage());
         }
 
@@ -41,7 +41,7 @@ public class LerCaixaView {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                // ERR00-J: Não suprimir ou ignorar exceções verificadas
+                // ERR00-J: não suprimir ou ignorar exceções verificadas
                 System.err.println("Erro ao exibir mensagem: " + e.getMessage());
             }
         }

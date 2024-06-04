@@ -61,11 +61,12 @@ public class EnviarEmailView {
 
     public int getRecipient(String email, int email_id) {
         int recipient_id = 0;
+
         try {
             recipient_id = Integer.parseInt(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
         } catch (NumberFormatException e) {
             // ERR00-J: não suprimir ou ignorar exceções verificadas
-            System.err.println("ID do destinatário inválido. Por favor, insira um número válido. Voltando ao Menu...");
+            System.err.println("Erro: ID do destinatário inválido. Por favor, insira um número válido. Voltando ao Menu...");
             menuEmailController.handleMenu(email, email_id);
         }
         return recipient_id;

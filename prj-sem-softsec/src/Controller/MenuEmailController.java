@@ -21,7 +21,7 @@ public class MenuEmailController {
         try {
             choice = view.getUserInput();
         } catch (NoSuchElementException e) {
-            System.err.println("Entrada inválida: insira um número válido. Reiniciando o Menu...");
+            System.err.println("Erro: entrada inválida, insira um número válido. Reiniciando o Menu...");
             view.limpaBufferScanner();
             handleMenu(email, email_id);
             return;
@@ -40,7 +40,7 @@ public class MenuEmailController {
                 System.exit(0);
                 break;
             default:
-                System.err.println("Entrada inválida: insira um número válido. Reiniciando o Menu...");
+                System.err.println("Erro: entrada inválida, insira um número válido. Reiniciando o Menu...");
                 handleMenu(email, email_id);
                 break;
         }
