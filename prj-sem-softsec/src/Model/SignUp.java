@@ -3,6 +3,7 @@ package Model;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClientBuilder;
+import com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException;
 import com.amazonaws.services.cognitoidp.model.SignUpRequest;
 import com.amazonaws.services.cognitoidp.model.SignUpResult;
 
@@ -12,19 +13,42 @@ public class SignUp {
     private SignUpResult result;
 
     public SignUp(String email, String senha) {
-        AWSCognitoIdentityProvider awsc = AWSCognitoIdentityProviderClientBuilder.standard()
-                .withRegion(Regions.US_EAST_2)
-                .build();
+        AWSCognitoIdentityProvider awsc;
+        try {
+            if (!isValidEmail(email)) {
+                throw new IllegalArgumentException("Formato de e-mail inválido.");
+            }
+            awsc = AWSCognitoIdentityProviderClientBuilder.standard()
+                    .withRegion(Regions.US_EAST_2)
+                    .build();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+            return;
+        } catch (Exception e) {
+            System.out.println("Erro com AWS Cognito: " + e.getMessage());
+            return;
+        }
 
         SignUpRequest sur = new SignUpRequest()
                 .withClientId(CLIENT_ID)
                 .withUsername(email)
                 .withPassword(senha);
 
-        result = awsc.signUp(sur);
+        try {
+            result = awsc.signUp(sur);
+        } catch (AWSCognitoIdentityProviderException e) {
+            System.out.println("Cadastro falhou: " + e.getErrorCode() + " - " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro durante cadastro: " + e.getMessage());
+        }
     }
 
     public boolean signUp() {
-        return (result != null);
+        return result != null;
+    }
+
+    private static boolean isValidEmail(String email) {
+        String regex = "^[\\w!#$%&'*+/=?^`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?$";
+        return email.matches(regex);
     }
 }

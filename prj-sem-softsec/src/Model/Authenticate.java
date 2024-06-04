@@ -3,10 +3,7 @@ package Model;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClientBuilder;
-import com.amazonaws.services.cognitoidp.model.AuthFlowType;
-import com.amazonaws.services.cognitoidp.model.AuthenticationResultType;
-import com.amazonaws.services.cognitoidp.model.InitiateAuthRequest;
-import com.amazonaws.services.cognitoidp.model.InitiateAuthResult;
+import com.amazonaws.services.cognitoidp.model.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +14,21 @@ public class Authenticate {
     private InitiateAuthResult authResponse;
     private AuthenticationResultType authResult;
     public Authenticate(String email, String senha) {
-        AWSCognitoIdentityProvider awsc = AWSCognitoIdentityProviderClientBuilder.standard()
-                .withRegion(Regions.US_EAST_2)
-                .build();
+        AWSCognitoIdentityProvider awsc;
+        try {
+            if (!isValidEmail(email)) {
+                throw new IllegalArgumentException("Formato de e-mail inválido.");
+            }
+            awsc = AWSCognitoIdentityProviderClientBuilder.standard()
+                    .withRegion(Regions.US_EAST_2)
+                    .build();
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+            return;
+        } catch (Exception e) {
+            System.out.println("Erro com AWS Cognito: " + e.getMessage());
+            return;
+        }
 
         Map<String, String> authParams = new HashMap<>();
         authParams.put("USERNAME", email);
@@ -30,10 +39,22 @@ public class Authenticate {
                 .withAuthParameters(authParams)
                 .withClientId(CLIENT_ID);
 
-        authResponse = awsc.initiateAuth(authRequest);
-        authResult = authResponse.getAuthenticationResult();
+        try {
+            authResponse = awsc.initiateAuth(authRequest);
+            authResult = authResponse.getAuthenticationResult();
+        } catch (AWSCognitoIdentityProviderException e) {
+            System.out.println("Autenticação falhou: " + e.getErrorCode() + " - " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro na autenticação: " + e.getMessage());
+        }
     }
+
     public boolean authenticate() {
-        return (authResult != null);
+        return authResult != null;
+    }
+
+    private static boolean isValidEmail(String email) {
+        String regex = "^[\\w!#$%&'*+/=?^`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?$";
+        return email.matches(regex);
     }
 }

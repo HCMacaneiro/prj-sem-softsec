@@ -29,9 +29,13 @@ public class SignUpController {
             // cria objeto de usuário para inserir no B.D
             usuario = new Usuario(email);
             signUpDAO = new SignUpDAO();
-            signUpDAO.inserir(usuario);
-            new MenuInicialController().handleMenu();
-        } else {
+            try {
+                signUpDAO.inserir(usuario);
+                new MenuInicialController().handleMenu();
+            } catch (Exception e) {
+                System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
+            }
+        }else {
             view.displaySignUpResult(false);
         }
     }
