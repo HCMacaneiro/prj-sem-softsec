@@ -32,7 +32,7 @@ public class EnviarEmailController {
         }
 
         view.displayEmailRecipient(id_array, email_array);
-        int recipient = view.getRecipient();
+        int recipient = view.getRecipient(email, email_id);
 
         view.displayEmailSubject();
         String subject = view.getSubject();
