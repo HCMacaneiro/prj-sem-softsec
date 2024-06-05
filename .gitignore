@@ -79,3 +79,9 @@ fabric.properties
 /.idea
 .idea/workspace.xml
 .idea/workspace.xml
+.idea/workspace.xml
+out/production/prj-sem-softsec/Model/Authenticate.class
+out/production/prj-sem-softsec/Model/SignUp.class
+out/production/prj-sem-softsec/View/AuthenticateView.class
+out/production/prj-sem-softsec/View/MenuInicialView.class
+out/production/prj-sem-softsec/View/SignUpView.class
