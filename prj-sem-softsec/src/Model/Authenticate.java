@@ -19,10 +19,6 @@ public class Authenticate {
     public Authenticate(String email, String senha) {
         AWSCognitoIdentityProvider awsc;
         try {
-            // Verificação de formato de e-mail com regex
-            if (!isValidEmail(email)) {
-                throw new IllegalArgumentException("Formato de e-mail inválido.");
-            }
             awsc = AWSCognitoIdentityProviderClientBuilder.standard()
                     .withRegion(Regions.US_EAST_2)
                     .build();
@@ -58,10 +54,5 @@ public class Authenticate {
     public boolean authenticate() {
         return authResult != null;
     }
-
-    // Função que verifica formato do e-mail
-    private static boolean isValidEmail(String email) {
-        String regex = "^[\\w!#$%&'*+/=?^`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?$";
-        return email.matches(regex);
-    }
+    
 }
