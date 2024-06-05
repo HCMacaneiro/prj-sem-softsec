@@ -5,26 +5,44 @@ import DAO.EnviarEmailDAO;
 import Model.Message;
 import View.EnviarEmailView;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EnviarEmailController {
 
     private EnviarEmailView view;
-    private CapturaRecipients capturaRecipients = new CapturaRecipients();
+    private CapturaRecipients capturaRecipients;
     private Message message;
-    private EnviarEmailDAO enviarEmailDAO = new EnviarEmailDAO();
-    private MenuEmailController menuEmailController = new MenuEmailController();
+    private EnviarEmailDAO enviarEmailDAO = EnviarEmailDAO.getInstancia();
+    private MenuEmailController menuEmailController;
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
+        this.menuEmailController = new MenuEmailController();
+        this.capturaRecipients = new CapturaRecipients();
     }
 
     public void handleMenu(String email, int email_id){
-        ArrayList<Integer> id_array = capturaRecipients.getId();
-        ArrayList<String> email_array = capturaRecipients.getEmail();
+        ArrayList<Integer> id_array = new ArrayList<>();
+        ArrayList<String> email_array = new ArrayList<>();
+
+        // verifica os IDs dos outros emails, e emails, da base
+        try {
+            id_array = capturaRecipients.getId();
+            email_array = capturaRecipients.getEmail();
+        } catch (SQLException e) {
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro ao capturar destinatários: " + e.getMessage());
+        }
 
         view.displayEmailRecipient(id_array, email_array);
-        int recipient = view.getRecipient();
+        int recipient = view.getRecipient(email, email_id);
+
+        // verifica se o usuário não inseriu um ID de email maior que o existente na base
+        if (verificaMaior(id_array, recipient)){
+            System.err.println("Erro ao escolher destinatário: ID inválido, favor escolher ID referente a um usuário. Voltando ao Menu...");
+            menuEmailController.handleMenu(email, email_id);
+        }
 
         view.displayEmailSubject();
         String subject = view.getSubject();
@@ -34,10 +52,27 @@ public class EnviarEmailController {
 
         message = new Message(email_id, recipient, subject, body);
 
-        enviarEmailDAO.inserir(message);
+        try {
+            enviarEmailDAO.inserir(message);
+        } catch (SQLException e) {
+            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro ao enviar email: " + e.getMessage());
+        }
 
         view.displayEmailEnviado();
 
         menuEmailController.handleMenu(email, email_id);
+    }
+
+    private boolean verificaMaior(ArrayList<Integer> id_array, int recipient){
+        int maior_número = -1;
+
+        for(int i : id_array){
+            if (i > maior_número){
+                maior_número = i;
+            }
+        }
+
+        return recipient > maior_número;
     }
 }

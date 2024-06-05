@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 public class CapturaID {
 
+    public static CapturaRecipients instancia;
     private Conexao conexao;
     private String query;
     private PreparedStatement ps;
@@ -17,6 +18,13 @@ public class CapturaID {
 
     public CapturaID(){
         this.conexao = Conexao.getInstancia();
+    }
+
+    public static synchronized CapturaRecipients getInstancia() {
+        if (instancia == null) {
+            instancia = new CapturaRecipients();
+        }
+        return instancia;
     }
 
     public int inserir(String email){

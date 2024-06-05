@@ -1,11 +1,15 @@
 package View;
 
+import Controller.MenuEmailController;
+
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EnviarEmailView {
 
-    Scanner scanner;
+    private Scanner scanner;
+    private MenuEmailController menuEmailController = new MenuEmailController();
 
     public EnviarEmailView(){
         this.scanner = new Scanner(System.in);
@@ -21,7 +25,7 @@ public class EnviarEmailView {
     }
 
     public String getSubject() {
-        return scanner.nextLine();
+        return normalizeString(scanner.nextLine()); // IDS01-J: normalização de strings antes da validação
     }
 
     public void displayEmailBody() {
@@ -34,7 +38,7 @@ public class EnviarEmailView {
     }
 
     public String getBody() {
-        return scanner.nextLine();
+        return normalizeString(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
     }
 
     public void displayEmailRecipient(ArrayList<Integer> id_array, ArrayList<String> email_array) {
@@ -46,7 +50,8 @@ public class EnviarEmailView {
 
         System.out.println("Listando ID - Email, dos usuários");
 
-        for (int i = 0; i <= (id_array.size() - 1); i++){
+        // imprime os emails
+        for (int i = 0; i < id_array.size(); i++){
             System.out.println("ID: " + id_array.get(i) + " - Email: " + email_array.get(i));
         }
 
@@ -54,9 +59,16 @@ public class EnviarEmailView {
         System.out.println("Insira o ID do destinatário: ");
     }
 
-    public int getRecipient() {
-        int recipient_id = scanner.nextInt();
-        scanner.nextLine();
+    public int getRecipient(String email, int email_id) {
+        int recipient_id = 0;
+
+        try {
+            recipient_id = Integer.parseInt(scanner.nextLine()); // IDS01-J: Normalização de strings antes da validação
+        } catch (NumberFormatException e) {
+            // ERR00-J: não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro: ID do destinatário inválido. Por favor, insira um número válido. Voltando ao Menu...");
+            menuEmailController.handleMenu(email, email_id);
+        }
         return recipient_id;
     }
 
@@ -68,8 +80,12 @@ public class EnviarEmailView {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            // ERR00-J: não suprimir ou ignorar exceções verificadas
+            System.err.println("Erro ao retornar ao menu: " + e.getMessage());
         }
     }
 
+    private String normalizeString(String input) {
+        return Normalizer.normalize(input, Normalizer.Form.NFC); // IDS01-J: normalização de strings antes da validação
+    }
 }
