@@ -10,18 +10,18 @@ import java.util.ArrayList;
 
 public class LerCaixaDAO {
 
-    private static LerCaixaDAO instance; // MSC07-J: uso do Singleton
+    private static LerCaixaDAO instancia; // MSC07-J: uso do Singleton
     private Conexao conexao;
 
     private LerCaixaDAO() {
         this.conexao = Conexao.getInstancia();
     }
 
-    public static synchronized LerCaixaDAO getInstance() {
-        if (instance == null) {
-            instance = new LerCaixaDAO();
+    public static synchronized LerCaixaDAO getInstancia() {
+        if (instancia == null) {
+            instancia = new LerCaixaDAO();
         }
-        return instance;
+        return instancia;
     }
 
     public ArrayList<Message> capturar(int email_id) throws SQLException {

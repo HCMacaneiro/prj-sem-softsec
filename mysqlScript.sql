@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS Messages (
     recipient_id INT NOT NULL,
     subject VARCHAR(255),
     body TEXT,
-    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (sender_id) REFERENCES Users(user_id),
     FOREIGN KEY (recipient_id) REFERENCES Users(user_id)
 );

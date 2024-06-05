@@ -13,12 +13,11 @@ public class EnviarEmailController {
     private EnviarEmailView view;
     private CapturaRecipients capturaRecipients;
     private Message message;
-    private EnviarEmailDAO enviarEmailDAO;
+    private EnviarEmailDAO enviarEmailDAO = EnviarEmailDAO.getInstancia();
     private MenuEmailController menuEmailController;
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
-        this.enviarEmailDAO = new EnviarEmailDAO();
         this.menuEmailController = new MenuEmailController();
         this.capturaRecipients = new CapturaRecipients();
     }

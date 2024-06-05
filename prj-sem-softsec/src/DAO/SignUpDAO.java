@@ -10,12 +10,20 @@ import java.sql.SQLException;
 
 public class SignUpDAO {
 
+    public static SignUpDAO instancia;
     private Conexao conexao;
     private String query;
     private PreparedStatement ps;
 
     public SignUpDAO(){
         this.conexao = Conexao.getInstancia();
+    }
+
+    public static synchronized SignUpDAO getInstancia() {
+        if (instancia == null) {
+            instancia = new SignUpDAO();
+        }
+        return instancia;
     }
 
     public void inserir(Usuario usuario){

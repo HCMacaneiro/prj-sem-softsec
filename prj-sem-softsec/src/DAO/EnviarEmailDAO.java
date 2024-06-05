@@ -8,10 +8,18 @@ import java.sql.SQLException;
 
 public class EnviarEmailDAO {
 
+    private static EnviarEmailDAO instancia; // MSC07-J: uso do Singleton
     private Conexao conexao;
 
     public EnviarEmailDAO(){
         this.conexao = Conexao.getInstancia(); // MSC07-J: uso do Singleton
+    }
+
+    public static synchronized EnviarEmailDAO getInstancia() {
+        if (instancia == null) {
+            instancia = new EnviarEmailDAO();
+        }
+        return instancia;
     }
 
     public void inserir(Message message) throws SQLException {

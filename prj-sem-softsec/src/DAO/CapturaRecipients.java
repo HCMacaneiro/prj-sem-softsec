@@ -8,10 +8,18 @@ import java.util.ArrayList;
 
 public class CapturaRecipients {
 
+    public static CapturaRecipients instancia;
     private Conexao conexao;
 
     public CapturaRecipients() {
         this.conexao = Conexao.getInstancia();
+    }
+
+    public static synchronized CapturaRecipients getInstancia() {
+        if (instancia == null) {
+            instancia = new CapturaRecipients();
+        }
+        return instancia;
     }
 
     public ArrayList<Integer> getId() throws SQLException {
