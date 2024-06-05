@@ -19,6 +19,8 @@ public class LerCaixaController {
 
     public void handleMenu(String email, int email_id){
         ArrayList<Message> caixa_postal = new ArrayList<>();
+
+        // valida recebimento dos emails, da base
         try {
             caixa_postal = lerCaixaDAO.capturar(email_id);
         } catch (SQLException e) {

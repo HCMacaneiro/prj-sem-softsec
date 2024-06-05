@@ -24,6 +24,7 @@ public class EnviarEmailController {
         ArrayList<Integer> id_array = new ArrayList<>();
         ArrayList<String> email_array = new ArrayList<>();
 
+        // verifica os IDs dos outros emails, e emails, da base
         try {
             id_array = capturaRecipients.getId();
             email_array = capturaRecipients.getEmail();

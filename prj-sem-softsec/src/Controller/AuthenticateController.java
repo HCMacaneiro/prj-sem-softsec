@@ -19,8 +19,10 @@ public class AuthenticateController {
     public void handleAuthentication() {
         view.displayLoginCredentials();
         String email = view.getEmail();
+
         view.displayPasswordPrompt();
         String password = view.getPassword();
+
         this.authenticate = new Authenticate(email, password);
 
         boolean success = authenticate.authenticate();
