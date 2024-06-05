@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class LerCaixaView {
 
     private final Scanner scanner;
-    private MenuEmailController menuEmailController;
 
     public LerCaixaView(){
         this.scanner = new Scanner(System.in);

@@ -11,7 +11,7 @@ public class EnviarEmailDAO {
     private Conexao conexao;
 
     public EnviarEmailDAO(){
-        this.conexao = Conexao.getInstancia();
+        this.conexao = Conexao.getInstancia(); // MSC07-J: uso do Singleton
     }
 
     public void inserir(Message message) throws SQLException {
@@ -25,7 +25,7 @@ public class EnviarEmailDAO {
             ps.setString(4, message.getBody());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            // ERR00-J: não suprimir ou ignorar exceções verificadas
             throw ex;
         }
     }

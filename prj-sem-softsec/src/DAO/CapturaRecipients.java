@@ -17,6 +17,7 @@ public class CapturaRecipients {
     public ArrayList<Integer> getId() throws SQLException {
         ArrayList<Integer> ids = new ArrayList<>();
         String query = "SELECT user_id FROM Users";
+
         try (Connection conn = this.conexao.getConn();
              PreparedStatement ps = conn.prepareStatement(query);
              ResultSet rs = ps.executeQuery()) {

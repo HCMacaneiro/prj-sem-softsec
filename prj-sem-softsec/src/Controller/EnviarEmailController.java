@@ -11,13 +11,16 @@ import java.util.ArrayList;
 public class EnviarEmailController {
 
     private EnviarEmailView view;
-    private CapturaRecipients capturaRecipients = new CapturaRecipients();
+    private CapturaRecipients capturaRecipients;
     private Message message;
-    private EnviarEmailDAO enviarEmailDAO = new EnviarEmailDAO();
-    private MenuEmailController menuEmailController = new MenuEmailController();
+    private EnviarEmailDAO enviarEmailDAO;
+    private MenuEmailController menuEmailController;
 
     public EnviarEmailController(){
         this.view = new EnviarEmailView();
+        this.enviarEmailDAO = new EnviarEmailDAO();
+        this.menuEmailController = new MenuEmailController();
+        this.capturaRecipients = new CapturaRecipients();
     }
 
     public void handleMenu(String email, int email_id){
@@ -38,7 +41,8 @@ public class EnviarEmailController {
 
         // verifica se o usuário não inseriu um ID de email maior que o existente na base
         if (verificaMaior(id_array, recipient)){
-            System.out.println("Erro ao escolher destinatário: ID inválido, favor escolher ID referente a um usuário.");
+            System.err.println("Erro ao escolher destinatário: ID inválido, favor escolher ID referente a um usuário. Voltando ao Menu...");
+            menuEmailController.handleMenu(email, email_id);
         }
 
         view.displayEmailSubject();

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class LerCaixaDAO {
 
-    private static LerCaixaDAO instance; // MSC07-J: Implementação do padrão Singleton
+    private static LerCaixaDAO instance; // MSC07-J: uso do Singleton
     private Conexao conexao;
 
     private LerCaixaDAO() {
@@ -30,7 +30,7 @@ public class LerCaixaDAO {
         try (Connection conn = this.conexao.getConn();
              PreparedStatement ps = conn.prepareStatement(query)) {
 
-            // IDS00-J: Prevenção de SQL Injection ao usar PreparedStatement
+            // IDS00-J: uso do PreparedStatement evitando SQLI
             ps.setInt(1, email_id);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
@@ -42,7 +42,7 @@ public class LerCaixaDAO {
                 }
             }
         } catch (SQLException ex) {
-            // ERR00-J: Não suprimir ou ignorar exceções verificadas
+            // ERR00-J: não suprimir ou ignorar exceções verificadas
             throw ex;
         }
         return caixa_postal;

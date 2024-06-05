@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class LerCaixaController {
 
     private LerCaixaView view;
-    private LerCaixaDAO lerCaixaDAO = LerCaixaDAO.getInstance(); // MSC07-J: Implementação do padrão Singleton
+    private LerCaixaDAO lerCaixaDAO = LerCaixaDAO.getInstance(); // MSC07-J: uso do Singleton
     private MenuEmailController menuEmailController;
 
     public LerCaixaController(){
